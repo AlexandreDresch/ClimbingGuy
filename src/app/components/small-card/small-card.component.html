@@ -1,0 +1,12 @@
+<div class="w-full h-48 bg-white flex p-3 gap-2 rounded-sm">
+  <img src="{{ image }}" alt="{{ title }}" class="w-1/2 md:w-60 h-auto rounded-sm object-cover hover:scale-105" />
+
+  <div class="flex flex-col justify-between w-1/2">
+    <a [routerLink]="['content', id]">
+      <h2 class="text-sm lg:text-base">
+        {{ title }}
+      </h2>
+    </a>
+    <span class="text-gray-600 text-xs font-light">{{ height }}</span>
+  </div>
+</div>

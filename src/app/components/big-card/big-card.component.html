@@ -1,0 +1,16 @@
+<div class="p-3 bg-white rounded-sm">
+  <div class="flex flex-col gap-1">
+    <img
+      src="{{ image }}"
+      alt="{{ title }}"
+      class="rounded-sm w-full object-cover"
+    />
+    <span class="text-gray-600 text-sm font-light text-end">{{ height }}</span>
+  </div>
+  <a [routerLink]="['content', id]">
+    <h2 class="mb-2 text-xl font-medium tracking-wide">{{ title }}</h2>
+  </a>
+  <p class="text-justify leading-5 hidden md:block">
+    {{ description }}
+  </p>
+</div>

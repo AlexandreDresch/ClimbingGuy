@@ -1,0 +1,14 @@
+<app-header></app-header>
+<div class="w-full h-full flex flex-col items-center ">
+  <div class="max-w-screen-xl h-auto flex flex-col gap-4 bg-white">
+    <app-carousel [slides]="slides"></app-carousel>
+    <div class="mx-2 pt-4">
+    <h1 class="text-lg sm:text-xl font-semibold md:text-2xl">{{title}}</h1>
+    <div class="pt-4 pb-10 flex flex-col gap-2">
+      <p *ngFor="let paragraph of content" class="text-gray-700 text-base">
+        {{paragraph}}
+      </p>
+    </div>
+  </div>
+  </div>
+</div>

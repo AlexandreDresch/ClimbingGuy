@@ -1,0 +1,26 @@
+<app-header></app-header>
+<app-banner></app-banner>
+<div class="w-full h-full flex flex-col justify-center items-center" id="explore">
+  <div class="max-w-screen-xl h-full flex justify-between my-10 gap-4 flex-col md:flex-row">
+    <div class="w-full md:w-1/2 h-full">
+      <app-big-card
+        id="{{postArr[0].id}}"
+        image="{{postArr[0].slides[0].url}}"
+        height="{{postArr[0].height}}"
+        title="{{postArr[0].title}}"
+        description="{{postArr[0].description}}"
+      ></app-big-card>
+    </div>
+    <div class="w-full md:w-1/2 flex flex-col gap-2">
+      <ng-container *ngFor="let post of postArr; let i = index">
+        <ng-container *ngIf="i > 0">
+          <app-small-card
+            [image]="post.slides[0].url"
+            [title]="post.title"
+            [height]="post.height"
+            [id]="post.id.toString()"
+          ></app-small-card>
+        </ng-container>
+      </ng-container>    
+  </div>
+</div>

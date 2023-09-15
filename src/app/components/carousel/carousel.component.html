@@ -1,0 +1,34 @@
+<div class="w-full h-full relative">
+  <img
+    class="w-full rounded-sm max-h-[600px] object-cover"
+    *ngFor="let image of slides; let slideIndex = index"
+    [src]="image.url"
+    [alt]="image.title"
+    [ngClass]="{ 'block': currentIndex === slideIndex, 'hidden': currentIndex !== slideIndex }"
+  />
+
+  <div class="w-full flex justify-between absolute top-1/2">
+    <button
+      (click)="goToPrevious()"
+      class="shadow-sm bg-white bg-opacity-5 backdrop-blur-lg rounded-full p-1 drop-shadow-lg ml-1"
+    >
+      <img src="../../../assets/left-arrow.svg" alt="Previous" />
+    </button>
+    <button
+      (click)="goToNext()"
+      class="shadow-sm bg-white bg-opacity-5 backdrop-blur-lg rounded-full p-1 drop-shadow-lg mr-1"
+    >
+      <img src="../../../assets/right-arrow.svg" alt="Next" />
+    </button>
+  </div>
+
+  <div class="flex justify-center gap-3 absolute -bottom-6 left-1/2 transition-colors">
+    <button
+      *ngFor="let slide of slides; let slideIndex = index"
+      [class]="currentIndex === slideIndex ? 'text-black' : 'text-gray-400'"
+      (click)="goToSlide(slideIndex)"
+    >
+      •
+    </button>
+  </div>
+</div>
